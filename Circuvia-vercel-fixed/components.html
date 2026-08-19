@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Component Library — Circuvia</title><link rel="stylesheet" href="dashboard.css"></head><body>
+<header class="topbar"><div class="brand"><div class="logo">C</div><div><b>Circuvia</b><small>IoT & Electronics Simulation Studio</small></div></div>
+<nav class="mainNav">
+  <a href="index.html">Dashboard</a>
+  <a href="simulator.html">Simulator</a>
+  <a href="projects.html">Projects</a>
+  <a href="components.html" class="active">Components</a>
+  <a href="tutorials.html">Tutorials</a>
+  <a href="docs.html">Docs</a>
+  <a href="about.html">About</a>
+</nav><div class="profile"><span>VS</span><div><b>Vineet Sharma</b><small>Developer</small></div></div></header>
+<main class="page"><section class="pageHero"><div class="eyebrow">CIRCUVIA</div><h1>Component Library</h1><p>Browse the growing Circuvia library and jump directly into the simulator.</p></section>
+<input id="q" class="searchBox" placeholder="Search Arduino, ESP32, DHT11, motor, driver...">
+<div class="filter"><button class="active" data-cat="All">All</button><button data-cat="Boards">Boards</button><button data-cat="Sensors">Sensors</button><button data-cat="Motors & Drivers">Motors & Drivers</button><button data-cat="Basic">Basic</button><button data-cat="Displays">Displays</button><button data-cat="Communication">Communication</button><button data-cat="Power">Power</button></div>
+<div id="items" class="list"></div>
+<script src="components.js"></script><script>
+const items=document.getElementById('items'),q=document.getElementById('q');let cat='All';
+function render(){let a=COMPONENTS.filter(c=>(cat==='All'||c.cat===cat)&&((c.name+' '+c.cat).toLowerCase().includes(q.value.toLowerCase())));items.innerHTML=a.map(c=>'<div class="listRow"><div class="libIcon '+c.kind+'">'+(c.name.includes('Arduino')?'▣':'◈')+'</div><div class="grow"><b>'+c.name+'</b><small>'+c.cat+' · '+c.pins.length+' pins · '+Object.values(c.props||{}).join(' · ')+'</small></div><span class="tag">'+c.kind+'</span><a href="simulator.html">Use →</a></div>').join('')||'<div class="emptyPage"><div><b>No components found</b><p>Try another search.</p></div></div>'}
+q.oninput=render;document.querySelectorAll('.filter button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter button').forEach(x=>x.classList.remove('active'));b.classList.add('active');cat=b.dataset.cat;render()});render();
+</script></main>
+<footer class="footerBar">© 2026 Vineet Sharma · Circuvia™ · All Rights Reserved</footer></body></html>
