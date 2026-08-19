@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Circuvia — Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">C</div><div><b>Circuvia</b><small>IoT & Electronics Simulation Studio</small></div></div>
+  
+<nav class="mainNav">
+  <a href="index.html" class="active">Dashboard</a>
+  <a href="simulator.html">Simulator</a>
+  <a href="projects.html">Projects</a>
+  <a href="components.html">Components</a>
+  <a href="tutorials.html">Tutorials</a>
+  <a href="docs.html">Docs</a>
+  <a href="about.html">About</a>
+</nav>
+  <div class="profile"><span>VS</span><div><b>Vineet Sharma</b><small>Developer</small></div></div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">WELCOME TO CIRCUVIA</div>
+      <h1>Build. Connect. <span>Simulate.</span></h1>
+      <p>Design IoT circuits, connect real component pins and test your ideas in a clean browser-based simulation workspace.</p>
+      <div class="heroBtns"><a class="primary" href="simulator.html">⚡ Open Simulator</a><button id="newProject">＋ New Project</button></div>
+    </div>
+    <div class="heroArt">
+      <div class="orb">C</div>
+      <div class="floatCard c1">ESP32 <small>GPIO / PWM</small></div>
+      <div class="floatCard c2">HC-SR04 <small>Distance Sensor</small></div>
+      <div class="floatCard c3">DC MOTOR <small>Actuator</small></div>
+    </div>
+  </section>
+
+  <section class="metrics">
+    <div><b>120+</b><span>Components</span></div>
+    <div><b>8</b><span>Categories</span></div>
+    <div><b>24/7</b><span>Browser Access</span></div>
+    <div><b>100%</b><span>Web Based</span></div>
+  </section>
+
+  <section class="sectionHead"><div><h2>Quick Start</h2><p>Jump straight into the part of Circuvia you need.</p></div></section>
+  <section class="cards">
+    <a class="card featured" href="simulator.html"><div class="cardIcon">⚡</div><div><h3>Start Simulation</h3><p>Drag boards, sensors, motors and drivers onto the canvas and wire their pins.</p></div><span>→</span></a>
+    <a class="card" href="components.html#boards"><div class="cardIcon blue">▣</div><div><h3>Arduino Projects</h3><p>Start with UNO, Nano or Mega.</p></div><span>→</span></a>
+    <a class="card" href="tutorials.html"><div class="cardIcon green">◈</div><div><h3>ESP32 Projects</h3><p>Build Wi‑Fi and IoT circuits.</p></div><span>→</span></a>
+  </section>
+
+  <section class="sectionHead recentHead"><div><h2>Recent Projects</h2><p>Your latest circuits will appear here.</p></div><button id="clearRecent">Clear</button></section>
+  <section id="recent" class="recent"><div class="empty"><div>⌁</div><b>No projects yet</b><span>Create your first circuit from the Simulator.</span><a href="simulator.html">Create Circuit</a></div></section>
+</main>
+
+<footer>© 2026 Vineet Sharma · Circuvia™ · All Rights Reserved</footer>
+<script>
+document.getElementById('newProject').addEventListener('click',()=>location.href='simulator.html');
+document.getElementById('clearRecent').addEventListener('click',()=>{document.getElementById('recent').innerHTML='<div class="empty"><div>⌁</div><b>No projects yet</b><span>Recent projects cleared.</span><a href="simulator.html">Create Circuit</a></div>'});
+</script>
+</body>
+</html>

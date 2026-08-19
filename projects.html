@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projects — Circuvia</title><link rel="stylesheet" href="dashboard.css"></head><body>
+<header class="topbar"><div class="brand"><div class="logo">C</div><div><b>Circuvia</b><small>IoT & Electronics Simulation Studio</small></div></div>
+<nav class="mainNav">
+  <a href="index.html">Dashboard</a>
+  <a href="simulator.html">Simulator</a>
+  <a href="projects.html" class="active">Projects</a>
+  <a href="components.html">Components</a>
+  <a href="tutorials.html">Tutorials</a>
+  <a href="docs.html">Docs</a>
+  <a href="about.html">About</a>
+</nav><div class="profile"><span>VS</span><div><b>Vineet Sharma</b><small>Developer</small></div></div></header>
+<main class="page"><section class="pageHero"><div class="eyebrow">CIRCUVIA</div><h1>Projects</h1><p>Manage your circuits, open saved work and start a new simulation.</p></section>
+<div class="grid">
+<a class="tile" href="simulator.html"><div class="tileIcon">＋</div><h3>New Circuit</h3><p>Open a fresh simulation workspace.</p></a>
+<a class="tile" href="simulator.html"><div class="tileIcon">⚡</div><h3>Starter Circuit</h3><p>Begin with Arduino, resistor and LED.</p></a>
+<a class="tile" href="tutorials.html"><div class="tileIcon">▶</div><h3>Learn by Building</h3><p>Follow guided IoT circuit tutorials.</p></a>
+</div>
+<h2 style="font-size:16px;margin:28px 0 10px">Saved Projects</h2>
+<div id="saved" class="list"></div>
+<script>
+const box=document.getElementById('saved');const s=localStorage.getItem('circuvia-v3');
+if(s){const d=JSON.parse(s);box.innerHTML='<div class="listRow"><div class="grow"><b>Local Circuit</b><small>'+((d.placed||[]).length)+' components · '+((d.wires||[]).length)+' connections</small></div><span class="tag">LOCAL</span><a href="simulator.html">Open →</a></div>'}else{box.innerHTML='<div class="emptyPage"><div><b>No saved projects yet</b><p>Create and save a circuit in the simulator.</p><a class="btn" href="simulator.html">Create Project</a></div></div>'}
+</script></main>
+<footer class="footerBar">© 2026 Vineet Sharma · Circuvia™ · All Rights Reserved</footer></body></html>
